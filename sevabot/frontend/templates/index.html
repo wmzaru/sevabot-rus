@@ -14,43 +14,43 @@
 
         <div class="hero-unit">
             <h1>
-                <a href="https://github.com/opensourcehacker/sevabot">Sevabot</a>
+                <a href="https://github.com/wmzaru/sevabot-rus">Sevabot-rus</a>
             </h1>
 
-            <p>A generic purpose hack together Skype bot at your service.</p>
+            <p>Сервис скайп бота к вашиму слугам.</p>
 
         </div>
 
-        <h2>Status</h2>
+        <h2>Статус</h2>
 
-        <div class="alert alert-success">Sevabot is running</div>
+        <div class="alert alert-success">Sevabot-Rus запущен</div>
 
-        <h2>Documentation</h2>
+        <h2>Документация</h2>
 
         <p>
-            Please visit
-            <a href="https://github.com/opensourcehacker/sevabot">Sevabot</a>
-            project page for more information.
+            Посетите
+            <a href="https://github.com/wmzaru/sevabot-rus">Sevabot-rus</a>
+            старницу проекта для интересующей вас информации.
         </p>
 
-        <h2>Admin</h2>
+        <h2>Админ</h2>
 
-        <h3>Chat list</h3>
+        <h3>Список чатов</h3>
 
-        <p>Enter shared settings from <i>settings.py</i> file to access the bot
-           chat list</p>
+        <p>Введите секретный код для списка чата из <i>settings.py</i> файла установленный в настройках бота
+         </p>
 
         <form action="http://{{ host }}:{{ port }}/chats/" method="POST" class="form-horizontal">
 
             <div class="control-group">
-                <label class="control-label" for="secret">Shared secret</label>
+                <label class="control-label" for="secret">Секретный код</label>
                 <div class="controls">
-                    <input type="password" name="secret" id="secret" placeholder="Look into your settings.py"></div>
+                    <input type="password" name="secret" id="secret" placeholder="Смотреть в settings.py"></div>
             </div>
 
             <div class="control-group">
                 <div class="controls">
-                    <button type="submit" class="btn">Show chat list</button>
+                    <button type="submit" class="btn">Смотреть список чатов</button>
                 </div>
             </div>
         </form>
