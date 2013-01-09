@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Send message to {{chat_id}}</title>
+    <title>Отправить сообщение в {{chat_id}}<title>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
 </head>
 <body>
@@ -9,9 +9,9 @@
 <div class="container">
     <form class="form-horizontal" action="/message/{{chat_id}}/" method="post">
         <fieldset>
-            <legend>Send message to <strong>{{chat_id}}</strong></legend>
+            <legend>Отправить сообщение в <strong>{{chat_id}}</strong></legend>
             <div class="control-group">
-                <label class="control-label" for="message">Message text</label>
+                <label class="control-label" for="message">Текст сообщения</label>
 
                 <div class="controls">
                     <textarea name="message" id="message" rows="5" style="width:60%;"></textarea>
@@ -23,7 +23,7 @@
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <button type="submit" class="btn">Send</button>
+                    <button type="submit" class="btn">Отправить</button>
                 </div>
             </div>
         </fieldset>
