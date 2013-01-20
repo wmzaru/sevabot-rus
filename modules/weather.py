@@ -46,7 +46,7 @@ def call_weather_api(location):
             main = data['main']
             if 'temp' in main:
                 temperature = main['temp'] - 273.15  # temperature converted from kelvins to celcius and rounded
-                text += 'Температура: %.1fc' % temperature
+                text += 'Temperature: %.1fc' % temperature
             else:
                 temperature = None
             if 'wind' in data and 'speed' in data['wind']:
@@ -55,29 +55,29 @@ def call_weather_api(location):
                 wind = None
             if temperature and wind:
                 feels_like = 13.12 + 0.6215 * temperature - 11.37 * (wind * 3.6) ** 0.16 + 0.3965 * temperature * (wind * 3.6) ** 0.16
-                text += ', Ощющение: %.1fc' % feels_like
+                text += ', Feels like: %.1fc' % feels_like
             if wind:
-                text += ', Ветер: %.1f м/с' % wind
+                text += ', Wind: %.1f m/s' % wind
             if 'humidity' in main:
                 humidity = main['humidity']  # Humidity in %
-                text += ', Влажность: %d%%' % humidity
+                text += ', Humidity: %d%%' % humidity
             if 'pressure' in main:
                 pressure = main['pressure']  # Atmospheric pressure in hPa
-                text += ', Давление: %d hPa' % pressure
+                text += ', Pressure: %d hPa' % pressure
             if 'clouds' in data and 'all' in data['clouds']:
                 cloudiness = data['clouds']['all']  # Cloudiness in %
-                text += ', Облачность: %d%%' % cloudiness
+                text += ', Cloudiness: %d%%' % cloudiness
 
             if temperature:
                 print(text.encode('utf-8'))
             else:
                 print('Error: No data.')
     else:
-        print('Error: Город %s не найден.' % location)
+        print('Error: Location %s not found.' % location)
 
 
 if len(sys.argv) < 2:
-    sys.exit("Вам необходимо ввести город (Например: !weather Kiev)")
+    sys.exit("You must give a city")
 
 city = sys.argv[1]
 
