@@ -46,7 +46,7 @@ def call_weather_api(location):
             main = data['main']
             if 'temp' in main:
                 temperature = main['temp'] - 273.15  # temperature converted from kelvins to celcius and rounded
-                text += 'Temperature: %.1fc' % temperature
+                text += 'Температура: %.1fc' % temperature
             else:
                 temperature = None
             if 'wind' in data and 'speed' in data['wind']:
@@ -55,18 +55,18 @@ def call_weather_api(location):
                 wind = None
             if temperature and wind:
                 feels_like = 13.12 + 0.6215 * temperature - 11.37 * (wind * 3.6) ** 0.16 + 0.3965 * temperature * (wind * 3.6) ** 0.16
-                text += ', Feels like: %.1fc' % feels_like
+                text += ', Ощютимость: %.1fc' % feels_like
             if wind:
-                text += ', Wind: %.1f m/s' % wind
+                text += ', Ветер: %.1f m/s' % wind
             if 'humidity' in main:
                 humidity = main['humidity']  # Humidity in %
-                text += ', Humidity: %d%%' % humidity
+                text += ', Влажность: %d%%' % humidity
             if 'pressure' in main:
                 pressure = main['pressure']  # Atmospheric pressure in hPa
-                text += ', Pressure: %d hPa' % pressure
+                text += ', Давление: %d hPa' % pressure
             if 'clouds' in data and 'all' in data['clouds']:
                 cloudiness = data['clouds']['all']  # Cloudiness in %
-                text += ', Cloudiness: %d%%' % cloudiness
+                text += ', Облачность: %d%%' % cloudiness
 
             if temperature:
                 print(text.encode('utf-8'))
@@ -77,7 +77,7 @@ def call_weather_api(location):
 
 
 if len(sys.argv) < 2:
-    sys.exit("You must give a city")
+    sys.exit("Вы должны указать город")
 
 city = sys.argv[1]
 
