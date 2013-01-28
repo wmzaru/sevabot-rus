@@ -14,6 +14,8 @@ from __future__ import absolute_import, division, print_function
 import sys
 import json
 import urllib
+import codecs
+fi = codecs.open(sys.argv[1] , 'r' , "utf-8")
 from datetime import datetime, timedelta
 
 url = 'http://openweathermap.org/data/2.1/find/name?q=%s'
@@ -69,7 +71,7 @@ def call_weather_api(location):
                 text += ", Облачность: %d%%" % cloudiness
 
             if temperature:
-                print(text.decode('utf-8'))
+                print(text.encode('utf-8'))
             else:
                 print('Error: No data.')
     else:
