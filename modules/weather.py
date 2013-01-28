@@ -69,7 +69,7 @@ def call_weather_api(location):
                 text += ", Облачность: %d%%" % cloudiness
 
             if temperature:
-                print(text.encode('utf-8'))
+                print(text.decode('utf-8'))
             else:
                 print('Error: No data.')
     else:
